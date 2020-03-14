@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+    var str1="510632";
+    var str2="lvyestudy";
+    //定义正则表达式
+    var myregex = /\d{6}/;
+    //判断字符串str1是否匹配正则表达式myregex
+        if(myregex.test(str1))
+        {
+            document.write("'510632'是正确的邮政编码"+"<br/>");
+        }
+        else
+        {
+            document.write("'510632'不是正确的邮政编码"+"<br/>");
+        }
+    //判断字符串str2是否匹配正则表达式myregex
+        if(myregex.test(str2))
+        {
+            document.write("'lvyestudy'是正确的邮政编码");
+        }
+        else
+        {
+            document.write("'lvyestudy'不是正确的邮政编码");
+        }
+        var str1="020-12345678";
+        //定义正则表达式
+        var myregex = /0\d{2}-\d{8}/;
+        //判断字符串str是否匹配正则表达式myregex
+        if(myregex.test(str1))
+        {
+            alert("匹配");
+        }
+        else   
+        {
+            alert("不匹配");
+        }
+         var str2="god";
+        //定义正则表达式
+        var myregex = new RegExp("\\d{6}");
+        //判断字符串str是否匹配正则表达式myregex
+        if(myregex.test(str2))
+        {
+            alert("匹配");
+        }
+        else
+        {
+            alert("不匹配");
+        }
+         var str3='<html>';
+         var myregex=/<[a-zA-Z][^>]*>/;
+         if(myregex.test(str3))
+         {
+             alert('true');
+         }
+         else
+         {
+             alert('false');
+         }
+    </script>
+</head>
+<body>
+</body>
+</html>

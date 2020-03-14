@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    #parent
+    {
+        height: 20px;
+        width: 360px;
+        position: relative;
+        background-color: grey;
+        margin:0 auto;
+    }
+    #div1
+    {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        left:0px;
+        top:0px;
+        background-color: indianred;
+       
+    }
+    #div2
+    {
+        position: relative;
+        top:100px;
+        left:0px;
+        width: 360px;
+        height: 360px;
+        overflow: hidden;
+        background-color: wheat;
+    }
+    #div3
+    {
+       
+        resize: none;
+        position: absolute;
+       
+    }
+</style>
+<script type="text/javascript">
+window.onload=function()
+{
+var div1=document.getElementById('div1');
+var div=document.getElementById('parent');
+var div3=document.getElementById('div3');
+div1.onmousedown=function(ev)
+{
+    var dev=ev||event;
+    var posx=dev.clientX-div1.offsetLeft;
+    document.onmousemove=function(ev)
+    {
+        var dev=ev||event;
+        var l=dev.clientX-posx;
+        if(l<0)
+        {
+            l=0;
+        }
+        else if(l>div.offsetWidth-div1.offsetWidth)
+        {
+            l=div.offsetWidth-div1.offsetWidth;
+        }
+        div1.style.left=l+'px';
+        div3.style.top=-l+'px';
+       
+    }
+    document.onmouseup=function()
+    {
+        div.onmousedown=null;
+        document.onmousemove=null;
+    }
+    return false;
+ }
+}
+</script>
+</head>
+<body>
+<div id="parent">
+    <div id="div1"></div>
+    <div id="div2">
+        <div id="div3">
+【公告】 「拂晓荣光」3.8版本更新公告
+爱酱 发布于 2020-03-05
+欢迎来到3.8版本——「拂晓荣光」！
+
+她是天命的最强女武神，冲锋陷阵，无往不利，用无数胜利塑造不败传说。幽兰黛尔量子属性A级装甲——「女武神·荣光」登场！
+
+“崩坏”从地球消失后的第八年，从懵懂走向成熟的她们，为这个美好的世界继续奋力而战。全新开放世界「后崩坏书」开启！
+
+ 
+
+更新内容
+
+1、全新角色——女武神·荣光
+
+◆幽兰黛尔A级角色「女武神·荣光」：量子属性女武神，近战火焰元素输出，可使用反击投技对敌人进行控制。
+
+ 
+
+※舰长可以通过以下方式获取和解锁新女武神：
+
+◆3月6日12:00~3月27日12:00，开启「女武神·荣光」扩充补给。同期还会开启「女武神·荣光」适用的装备补给「晨曦荣辉补给」。
+
+ 
+
+2、全新开放世界——后崩坏书
+
+◆这是“崩坏”从地球消失后的第八年，地球文明逐渐从灾害中复苏。曾克服了无数艰难险阻的她们，也从懵懂走向成熟，为这个她们深爱的美好世界，继续奋力而战。
+
+◆全新开放世界「后崩坏书」开启！参与探索，获取4★大剑武器「神火试炼」、精准补给卡、「后崩坏书自选箱」（可自选崩坏结晶×1或爱因斯坦环磁机×70）等奖励！
+
+ 
+
+3、主线十五章——迷途沙尘
+
+◆世界蛇的尖牙凶光毕露，天命的长矛寒芒闪耀。随着天命最强女武神的到来，一切依然未成定局。
+
+◆3月26日10:00，主线十五章更新！参与限时探索活动，获取4★骑枪武器「耀星」、3★圣痕「史丹·逗猫（中）」、「女武神·荣光」角色碎片等奖励！
+
+ 
+
+4、休伯利安军械库装备更新
+
+◆新武器：「天霜之斯卡蒂」、「晨曦荣辉」、「神火试炼」、「耀星」
+
+◆新圣痕：「列文虎克」
+
+ 
+
+
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

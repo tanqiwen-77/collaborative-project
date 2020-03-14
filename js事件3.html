@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<htnl>
+<head>
+<style type="text/css">
+#div1
+{
+    position: fixed;
+    width:200px;
+    height: 200px;
+    background-color: rgba(241, 171, 78, 0.986);
+}
+.box
+{
+    position: fixed;
+    border:1px dashed red;
+}
+</style>
+<script type="text/javascript">
+window.onload=function()
+{
+    var div=document.getElementById('div1');
+    div.onmousedown=function(ev)
+    {
+        var oev=ev||event;
+        var posx=oev.clientX-div.offsetLeft;
+        var posy=oev.clientY-div.offsetTop;
+        var obox=document.createElement('div');
+        obox.className="box";
+        obox.style.width=div.offsetWidth+'px';
+        obox.style.height=div.offsetHeight+'px';
+        obox.style.top=div.offsetTop+'px';
+        obox.style.left=div.offsetLeft+'px';
+        document.body.appendChild(obox);
+        document.onmousemove=function(ev)
+        {
+            var oev=ev||event;
+            var l=oev.clientX-posx;
+            var t=oev.clientY-posy;
+            if(l<0)
+            {
+                l=0;
+            }
+            else if(l>document.documentElement.clientWidth-div.offsetWidth)
+            {
+                l=document.documentElement.clientWidth-div.offsetWidth;
+            }
+            if(t<0)
+            {
+                t=0;
+            }
+            else if(t>document.documentElement.clientHeight-div.offsetHeight)
+            {
+                t=document.documentElement.clientHeight-div.offsetHeight;
+            }
+            obox.style.left=l+'px';
+            obox.style.top=t+'px';
+            
+        }
+        document.onmouseup=function()
+        {
+            document.onmousedown=null;
+            document.onmousemove=null;
+            div.style.left=obox.offsetLeft+'px';
+            div.style.top=obox.offsetTop+'px';
+            document.body.removeChild(obox);
+        }
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</htnl>

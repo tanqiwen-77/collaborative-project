@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    #div1
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    #div2
+    {
+        background-color: bisque;
+        border:1px soild red;
+        width: 200px;
+        height: 200px;
+        position: fixed;
+        left:-200px;
+        opacity: 0.3;
+    }
+    #btn
+    {
+        position: relative;
+        top:240px;
+        height: 30px;
+    }
+</style>
+<script type="text/javascript">
+window.onload=function()
+{
+    
+    var btn=document.getElementById('btn');
+    btn.onmouseover=function()
+    {
+      startmove(200,10);
+    }
+    btn.onmouseout=function()
+    {
+      startmove(-200,-10);
+    }
+    var timer=NULL;
+    function startmove(tag,speed)
+    {
+        var div=document.getElementById('div2');
+        clearInterval(timer);
+        timer=setInterval(move,30);
+        function move()
+        {
+            if(div.offsetLeft==tag)
+            {
+                clearInterval(timer);
+            }
+            else
+            {
+             div.style.left=div.offsetLeft+speed+'px';
+            }
+        }
+    }
+}
+</script>
+</head>
+<body>
+    <div id="div1">
+    <div id="div2"></div>
+    <input id="btn" type="button" value="导航"/>
+    </div>
+
+</body>
+</html>
